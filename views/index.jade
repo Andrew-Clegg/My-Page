@@ -1,0 +1,141 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Andrew Clegg Overview
+
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(src='https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js')
+    script(src='/javascripts/blackjackGame.js')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+
+    style.
+      .headbox {
+      display: flex;
+      grid-template-columns: (1,1fr);
+      gap: 20px;
+      background-color: lightgray;
+      }
+      .headbox h2{
+      margin-top: 13px;
+      margin-left: 20px;
+      }
+      .headbox h1{
+      margin-top: 5px;
+      }
+      .titles{
+      display: inline-flex;
+      }
+      .top-text{
+      display: grid;
+      }
+      #bluebox{
+      background-color: lightskyblue;
+      margin-left: 50px;
+      margin-right: 50px;
+      padding: 25px;
+      }
+      #bluebox img{
+      margin-top: 25px;
+      }
+      .endtag{
+      display: inline-flex;
+      align-items: right;
+      }
+      .school{
+      margin-left: 20px;
+      margin-top : 1px;
+      }
+      #section{
+      margin-left: 110px;
+      }
+      .underline{
+      text-decoration: underline;
+      font-weight: bold;
+      }
+      .clr{
+      background-color: tan;
+      color: black;
+      position: fixed;
+      right: 1%;
+      bottom:5%;
+      min-height:40px;
+      }
+  body
+    .headbox
+      img(src='/images/profilepic.jpg' width='145' height='145')
+      // https://pixabay.com/photos/question-mark-symbol-icon-character-2309040/
+      .top-text
+        .titles
+          h1.inline  Andrew Clegg 
+          h2.inline Computer Science Undergraduate Student
+        .container
+          .row
+            .col-md-auto
+              i.material-icons(style='font-size:18px;') email
+            .col Cleggster@hotmail.com
+            .w-100
+            .col-md-auto
+              i.material-icons(style='font-size:18px;') phone
+            .col (437)-981-2854
+            .w-100
+            .col-md-auto
+              i.material-icons(style='font-size:18px;') house
+            .col Oshawa, ON
+    hr(width='100%' size='4' color='black')
+    // Title underline
+    // Feeling bored button
+    div
+      button#boredBtn.rounded-circle.clr Feeling Bored?
+      script.
+        document.getElementById("boredBtn").addEventListener('click', 
+        function (){
+        window.location.href = "/blackjack";
+        })
+    #bluebox
+      #section.aboutMe
+        h3.underline(data-bs-toggle='collapse' data-bs-target='#aboutText' aria-expanded='false' aria-controls='aboutText')
+          | About Me
+        #aboutText.collapse.show
+          .card.mb-3(style='max-width: 125vh')
+            .row.g-0
+              .col-md-4
+                img.img-fluid
+              .col-md-8
+                .card-body
+                  h5.card-title Card title
+                  p.card-text
+      #section.school
+        h3.underline(data-bs-toggle='collapse' data-bs-target='#bodyText' aria-expanded='false' aria-controls='bodyText')
+          | Education
+        #bodyText.collapse.show
+          .card.mb-3(style='max-width: 125vh')
+            .row.g-0
+              .col-md-2
+                img.img-fluid(src='Images/OnTech.jpg')
+              .col-md-8
+                .card-body
+                  h5.card-title Ontario Tech University
+                  h6.card-subtitle(style='color:blue; font-size:17px') Bachelors of Science - Computer Science
+                  p.card-text.text-muted(style='font-size:14px') September 2019 - December 2024
+                  p.underline Awards
+                  ul.awards
+                    li Dean's List       -   Fall, 2021
+                    li Presidents's List   -    Winter 2021
+      #section.projects
+        h3#projHead.underline Projects
+        h4.underline(data-bs-toggle='collapse' data-bs-target='#projText' aria-expanded='false' aria-controls='projText')
+          | Unity Engine - 2D Survival Game
+        #projText.collapse.show
+          .card.mb-3(style='max-width: 125vh; height:200px;')
+            .row.g-0
+              .col-md-4
+                img.img-fluid
+              .col-md-8
+                .card-body
+                  h5.card-title Card title
+                  p.card-text
